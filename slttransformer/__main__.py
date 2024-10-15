@@ -5,11 +5,8 @@ import sys
 from signjoey.training import train
 from signjoey.prediction import test
 
-sys.path.append("/vol/research/extol/personal/cihan/code/SignJoey")
-
-
 def main():
-    ap = argparse.ArgumentParser("Joey NMT")
+    ap = argparse.ArgumentParser("SLT Transformer")
 
     ap.add_argument("mode", choices=["train", "test"], help="train a model or test")
 

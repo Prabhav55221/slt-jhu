@@ -1,29 +1,25 @@
-# Sign Language Transformers (CVPR'20)
+# Sign Language Transformers - Clone for JHU Project
 
-This repo contains the training and evaluation code for the paper [Sign Language Transformers: Sign Language Transformers: Joint End-to-end Sign Language Recognition and Translation](https://www.cihancamgoz.com/pub/camgoz2020cvpr.pdf). 
-
-This code is based on [Joey NMT](https://github.com/joeynmt/joeynmt) but modified to realize joint continuous sign language recognition and translation. For text-to-text translation experiments, you can use the original Joey NMT framework.
+This repo contains the training and evaluation code for the baseline paper [Sign Language Transformers: Sign Language Transformers: Joint End-to-end Sign Language Recognition and Translation](https://www.cihancamgoz.com/pub/camgoz2020cvpr.pdf). 
  
 ## Requirements
 * Download the feature files using the `data/download.sh` script.
 
-* [Optional] Create a conda or python virtual environment.
+* Ensure paths are correct - Refer to config in CONFIGS for path.
 
-* Install required packages using the `requirements.txt` file.
+* Create a conda or python virtual environment.
 
+* Install required packages using the `requirements.txt` file. Please Change Torch Versions based on your CUDA and GPU installation.
+
+    `pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html`
     `pip install -r requirements.txt`
+    `pip3 install tensorflow`
 
 ## Usage
 
-  `python -m signjoey train configs/sign.yaml` 
+  `python -m slttransformer train configs/sign.yaml` 
 
-! Note that the default data directory is `./data`. If you download them to somewhere else, you need to update the `data_path` parameters in your config file.   
-## ToDo:
-
-- [X] *Initial code release.*
-- [X] *Release image features for Phoenix2014T.*
-- [ ] Share extensive qualitative and quantitative results & config files to generate them.
-- [ ] (Nice to have) - Guide to set up conda environment and docker image.
+! Note that the default data directory is `./data`. If you download them to somewhere else, you need to update the `data_path` parameters in your config file. 
 
 ## Reference
 
@@ -35,6 +31,3 @@ Please cite the paper below if you use this code in your research:
       booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
       year = {2020}
     }
-
-## Acknowledgements
-<sub>This work was funded by the SNSF Sinergia project "Scalable Multimodal Sign Language Technology for Sign Language Learning and Assessment" (SMILE) grant agreement number CRSII2 160811 and the European Union’s Horizon2020 research and innovation programme under grant agreement no. 762021 (Content4All). This work reflects only the author’s view and the Commission is not responsible for any use that may be made of the information it contains. We would also like to thank NVIDIA Corporation for their GPU grant. </sub>
